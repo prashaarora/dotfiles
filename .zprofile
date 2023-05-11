@@ -1,0 +1,22 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH=$PATH:/opt/local/bin
+alias kubectl='kubecolor'
+alias k='kubectl'
+alias kg='kubectl get'
+alias kl='kubectl logs'
+alias kgp='kubectl get pods'
+alias kd='kubectl describe'
+alias tf='terraform'
+alias tfp='terraform plan'
+alias tfa='terraform apply'
+alias tfi='terraform init'
+alias tff='terraform fmt'
+alias kname="kubectl config view --minify -o jsonpath='{.clusters[].name}'"
+alias repos='cd Documents/repos/'
+alias pmx='cd Documents/repos/price-matrix'
+alias bl='cd Documents/repos/bookinglink'
+alias gp='git pull'
+alias gcm='git checkout master'
+alias gc='git checkout'
+alias kctx='kubie ctx'
+alias kns='kubie ns'
