@@ -61,14 +61,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -86,6 +78,23 @@ zsh-syntax-highlighting
 
 source $ZSH/oh-my-zsh.sh
 
+#Terraform lock providers
+tf-lock() {
+  terraform providers lock \
+  -platform=linux_amd64 \
+  -platform=darwin_amd64 \
+  -platform=darwin_arm64 \
+  -platform=windows_amd64
+}
+
+# New tab colors for iterm2
+function tabcolor {
+  echo -n -e "\033]6;1;bg;red;brightness;$1\a"
+  echo -n -e "\033]6;1;bg;green;brightness;$2\a"
+  echo -n -e "\033]6;1;bg;blue;brightness;$3\a"
+}
+
+tabcolor $(jot -r 1 0 255) $(jot -r 1 0 255) $(jot -r 1 0 255)
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
